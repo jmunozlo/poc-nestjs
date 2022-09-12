@@ -1,12 +1,12 @@
-FROM node:18-alpine3.15 
+FROM alpine:3.15
 
-RUN apk add --no-cache libc6-compat
+RUN apk add --update yarn 
 
 WORKDIR /app
 
-COPY package.json ./
+COPY package.json .
 
-RUN yarn install --frozen-lockfile
+RUN yarn 
 
 COPY . .
 

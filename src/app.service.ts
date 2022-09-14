@@ -8,6 +8,7 @@ export class AppService {
       version: '0.0.1',
       description: 'REST API with NESTJS',
       author: 'jmunozlo',
+      message: process.env.MESSAGE || 'Sin variable',
     };
   }
 }

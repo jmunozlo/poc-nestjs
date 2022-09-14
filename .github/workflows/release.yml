@@ -5,16 +5,16 @@ name: Release Docker
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - run: docker build . -t josmunozl/nest-app
-    - run: echo "${{secrets.DOCKER_PASSWORD}}" | docker login -u ${{secrets.DOCKER_USER}} --password-stdin
-    - run: docker push josmunozl/nest-app
+      - uses: actions/checkout@v3
+      - run: docker build . -t jmunozlo/nest-app
+      - run: echo "${{secrets.DOCKER_PASSWORD}}" | docker login -u ${{secrets.DOCKER_USER}} --password-stdin
+      - run: docker push jmunozlo/nest-app
